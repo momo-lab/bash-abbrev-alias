@@ -1,6 +1,8 @@
 # bash-abbrev-alias
 This bash functions provides functionality similar to Vim's abbreviation expansion.
 
+See https://github.com/momo-lab/zsh-abbrev-alias for zsh version.
+
 ## Installation
 Get bash-abbrev-alias.
 
