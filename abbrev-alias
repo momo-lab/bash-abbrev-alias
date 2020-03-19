@@ -10,8 +10,6 @@ __abbrev_alias::magic_abbrev_expand() {
     local command=${BASH_REMATCH[1]}
     left=${left:0:$((${#left} - ${#command}))}
     local abbr=${_abbrev_aliases[$command]}
-    # unsetするとなんかおかしくなる
-    # なんかの条件で常にmasterに変換されちゃうっぽい
     [[ -z "$abbr" ]] && return
     [[ $abbr =~ ^([cg])/([01])/(.*)$ ]] || return
     local kind=${BASH_REMATCH[1]}
@@ -138,8 +136,6 @@ abbrev_alias() {
     esac
     shift
   done
-
-  echo [$is_eval][$kind][$mode][${argc}][${argv[@]}]
 
   # unregister
   if [[ "$mode" == "unregister" ]]; then
