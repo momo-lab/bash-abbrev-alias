@@ -156,7 +156,7 @@ abbrev-alias() {
   # register or list
   if [[ "$mode" == "register" ]]; then
     local result=0
-    for keyvalue in ${argv[@]}; do
+    for keyvalue in "${argv[@]}"; do
       if [[ "$keyvalue" =~ = ]]; then
         __abbrev_alias::register ${kind:-c} $is_eval "$keyvalue"
       else
