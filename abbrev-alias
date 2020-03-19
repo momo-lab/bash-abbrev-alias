@@ -108,7 +108,7 @@ __abbrev_alias::unregister() {
 }
 
 # Define command
-abbrev_alias() {
+abbrev-alias() {
   declare -i argc=0
   declare -a argv=()
   local is_eval=0 kind= mode=register
