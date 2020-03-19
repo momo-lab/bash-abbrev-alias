@@ -24,17 +24,17 @@ __abbrev_alias::magic_abbrev_expand() {
   fi
 }
 
-__abbrev_alias::magic_abbrev_expand_and_insert_space() {
-  __abbrev_alias::magic_abbrev_expand
-  __abbrev_alias::insert_space
-}
-
 __abbrev_alias::insert_space() {
   local left=${READLINE_LINE:0:${READLINE_POINT}}
   local right=${READLINE_LINE:${READLINE_POINT}}
   local space=" "
   READLINE_LINE="$left$space$right"
-  READLINE_POINT=$(($READLINE_POINT + 1))
+  READLINE_POINT=$(($READLINE_POINT + ${#space}))
+}
+
+__abbrev_alias::magic_abbrev_expand_and_insert_space() {
+  __abbrev_alias::magic_abbrev_expand
+  __abbrev_alias::insert_space
 }
 
 # bind space
