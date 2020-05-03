@@ -6,7 +6,7 @@ typeset -Ag _abbrev_aliases
 __abbrev_alias::magic_abbrev_expand() {
   local left=${READLINE_LINE:0:${READLINE_POINT}}
   local right=${READLINE_LINE:${READLINE_POINT}}
-  if [[ $left =~ ([-_a-zA-Z0-9]+)$ ]]; then
+  if [[ $left =~ ([-_a-zA-Z0-9#%+.~]+)$ ]]; then
     local command=${BASH_REMATCH[1]}
     left=${left:0:$((${#left} - ${#command}))}
     local abbr=${_abbrev_aliases[$command]}
