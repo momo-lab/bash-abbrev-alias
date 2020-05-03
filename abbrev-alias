@@ -13,9 +13,10 @@ __abbrev_alias::magic_abbrev_expand() {
     [[ -z "$abbr" ]] && return
     [[ $abbr =~ ^([cg])/([01])/(.*)$ ]] || return
     local kind=${BASH_REMATCH[1]}
-    [[ "$kind" == "c" && "$left" != "" ]] && return
     local is_eval=${BASH_REMATCH[2]}
     local newbuffer=${BASH_REMATCH[3]}
+    local re="(\\||;|&|\\$\\(|\`) ?$"
+    [[ "$kind" == "c" && ! ("$left" == "" || "$left" =~ $re ) ]] && return
     if [[ "$is_eval" == "1" ]]; then
       newbuffer=$(eval "echo \"$newbuffer\"")
     fi
