@@ -1,5 +1,3 @@
-#!/usr/bin/env bash
-
 typeset -g _ABBREV_ALIAS_VERSION='0.1.0'
 typeset -Ag _abbrev_aliases
 
