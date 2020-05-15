@@ -14,7 +14,7 @@ $ git clone https://github.com/momo-lab/bash-abbrev-alias.git
 Append .bashrc file.
 
 ```.bashrc
-source /path/to/install/bash-abbrev-alias/abbrev-alias
+source /path/to/install/bash-abbrev-alias/abbrev-alias.plugin.bash
 ```
 
 ## For Example
