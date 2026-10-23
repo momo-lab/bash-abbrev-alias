@@ -41,12 +41,12 @@ bind -x '"\C-x ": __abbrev_alias::insert_space'
 bind -x '" ": __abbrev_alias::magic_abbrev_expand_and_insert_space'
 
 # bind enter
-bind -x '"\C-\xFF": __abbrev_alias::magic_abbrev_expand'
-bind '"\C-\xFE": accept-line'
+bind -x '"\C-x\C-a": __abbrev_alias::magic_abbrev_expand'
+bind '"\C-x\C-b": accept-line'
 bind '"\C-x\C-m": accept-line'
 bind '"\C-x\C-j": accept-line'
-bind '"\C-m": "\C-\xFF\C-\xFE"'
-bind '"\C-j": "\C-\xFF\C-\xFE"'
+bind '"\C-m": "\C-x\C-a\C-x\C-b"'
+bind '"\C-j": "\C-x\C-a\C-x\C-b"'
 
 __abbrev_alias::show() {
   local kind_filter=$1
